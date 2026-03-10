@@ -11,12 +11,22 @@
 <meta property="og:image" content="https://isyaanshari24.github.io/Undangan/thumbnail.jpg">
 <meta property="og:url" content="https://isyaanshari24.github.io/Undangan/">
 <meta property="og:type" content="website">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>The Wedding Of Isya & Jumi</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+    html, body{
+margin:0;
+padding:0;
+overflow-x:hidden;
+max-width:100%;
+}
+
+*{
+box-sizing:border-box;
+}
 *{
 margin:0;
 padding:0;
@@ -42,13 +52,9 @@ overflow-x:hidden;
 }
     
 section{
-min-height:100vw;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:60px 20px;
+width:100%;
+min-height:100vh;
+}
 
 background-image:
 linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
@@ -56,11 +62,17 @@ url("cover.jpg");
 
 background-size:cover;
 background-position:center;
+min-height:100vh;
+width:100%;
+background-position:center;
 background-repeat:no-repeat;
 
 background-attachment:fixed;
 }
-
+img, video{
+max-width:100%;
+height:auto;
+}
 h1,h2{
 font-family:'Playfair Display',serif;
 }
