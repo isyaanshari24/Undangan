@@ -23,33 +23,6 @@ padding:0;
 overflow-x:hidden;
 max-width:100%;
 }
-    /* Container utama tetap bersih */
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Kita buat background di lapisan terpisah */
-body::before {
-    content: "";
-    position: fixed; /* Ini yang membuat background diam saat di-scroll */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Menutupi seluruh layar */
-    
-    /* Pasang gambar kamu di sini */
-    background-image: url('nama-foto-kamu.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Lapisan ini harus di paling belakang */
-    z-index: -1; 
-    
-    /* Tambahan agar render di iPhone lebih halus */
-    will-change: transform;
-}
 *{
 margin:0;
 padding:0;
