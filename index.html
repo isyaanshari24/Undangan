@@ -57,12 +57,8 @@ url("cover.jpg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-min-height:100vh;
-width:100%;
+
 background-attachment:fixed;
-}
-*{
-box-sizing:border-box;
 }
 
 h1,h2{
@@ -140,48 +136,9 @@ opacity:0;
 transform:translateY(40px);
 transition:1.4s ease;
 }
-
 .fade.show{
 opacity:1;
-tran/* Container Utama (Ganti 'nama-class-kamu' dengan class yang kamu pakai) */
-.nama-class-kamu {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh; /* Solusi Android agar tidak ada putih di bawah */
-    overflow: hidden;
-    color: white; /* Agar teks kontras */
-}
-
-/* Trik khusus untuk Background agar stabil di iPhone & Android */
-.nama-class-kamu::before {
-    content: "";
-    position: fixed; /* Membuat background tetap diam (pengganti background-attachment) */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Gabungkan gradient dan gambar kamu di sini */
-    background-image: 
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-        url("cover.jpg");
-        
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Lapisan paling belakang */
-    z-index: -1; 
-    
-    /* Optimasi render untuk mobile */
-    will-change: transform;
-    transform: translateZ(0);
-}
-
-* {
-    box-sizing: border-box;
-    }sform:translateY(0);
+transform:translateY(0);
 }
 
 #gallery{
