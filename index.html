@@ -103,7 +103,16 @@ text-shadow:
 0 2px 6px rgba(0,0,0,0.6),
 0 6px 20px rgba(0,0,0,0.4);
 }
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
 
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
 /* khusus elemen yang memang gold */
 .gold{
 color:#C6A75E !important;
@@ -1201,25 +1210,19 @@ if(guest){
 document.getElementById("guestName").textContent = guest.replace(/%20/g," ");  
 }  
 </script>  <script>  
-function openInvitation(){  
-  
-document.body.classList.remove("lock-scroll");  
-  
-document.getElementById("cover").style.display="none";  
-  
-document.getElementById("music").play();  
-  
-/* tampilkan header */  
-  
-document.getElementById("mainHeader").classList.add("show");  
-  
-const faders = document.querySelectorAll(".fade");  
-  
-faders.forEach(el=>{  
-el.classList.add("show");  
-});  
-  
-}  
+function openInvitation(){
+
+document.body.classList.remove("lock-scroll");
+
+document.getElementById("cover").style.display="none";
+
+document.getElementById("music").play();
+
+document.getElementById("mainHeader").classList.add("show");
+
+revealAll();
+
+}
   
 function toggleMenu(){  
   
@@ -1375,6 +1378,21 @@ window.open(googleCalendar,"_blank");
 }  
     
 }  
+    function revealAll(){
+
+const elements = document.querySelectorAll("section *");
+
+elements.forEach((el,i)=>{
+
+el.classList.add("reveal");
+
+setTimeout(()=>{
+el.classList.add("show");
+}, i * 120);
+
+});
+
+    }
     
 </script> 
 
