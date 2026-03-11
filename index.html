@@ -789,7 +789,7 @@ el.classList.add("show");
 
 <!-- COVER -->
 
-<section id="cover">
+<section class="fade" id="cover">
 <div class="frame">    
 <div class="content">
 
@@ -813,7 +813,7 @@ Open Invitation
 
 <!-- SLIDE 1 -->
 
-<section id="slide2">
+<section class="fade" id="slide2">
 <div class="monogram">
 <span>I</span>
 <div class="line"></div>
@@ -832,7 +832,7 @@ mendapat ketenangan hati..."
 
 <!-- SLIDE 2 -->
 
-<section id="slide3">
+<section class="fade" id="slide3">
 
 <div class="fade">
 
@@ -885,7 +885,7 @@ Instagram
 </section>
 
 <!-- Save the date -->
-<section id="save-date">
+<section class="fade" id="save-date">
 
 <div id="countdown"></div>    
 
@@ -931,7 +931,7 @@ Save the Date
 
 </section>
 <!-- GALLERY -->
-<section slide="gallery">
+<section class="fade" slide="gallery">
 
 <h2 class="gold">Our Gallery</h2>
 
@@ -948,7 +948,7 @@ Save the Date
 
 <!-- LOKASI -->
 
-<section id="slide6">
+<section class="fade" id="slide6">
     
     
 <div class="fade">
@@ -999,7 +999,7 @@ style="border:0;border-radius:20px;">
 </section>
 
 <!-- LOVE STORY -->
-<section id="love-story">
+<section class="fade" id="love-story">
 
 <h2 class="gold">Our Love Story</h2>
 
@@ -1042,7 +1042,7 @@ Akhirnya kami memutuskan untuk melangkah lebih jauh, mengikat janji suci dalam p
 
 <!-- GIFT -->
 
-<section>
+<section class="fade">
 
 <div class="fade">
 
@@ -1139,7 +1139,7 @@ Banjarmasin, Kalimantan Selatan ID:70118
 
 <!-- CLOSING -->
 
-<section slide="closing" >
+<section class="fade" slide="closing" >
 
 <div class="fade">
 
@@ -1223,6 +1223,23 @@ document.getElementById("mainHeader").classList.add("show");
 revealAll();
 
 }
+    const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
   
 function toggleMenu(){  
   
