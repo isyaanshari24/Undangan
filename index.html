@@ -915,9 +915,9 @@ Instagram
 
 </div>
 
-<a class="save-btn" href="wedding.ics">
+<button onclick="addToCalendar()" class="calendar-btn">
 Save the Date
-</a>
+</button>
 
 </div>
 
@@ -1348,6 +1348,44 @@ navigator.clipboard.writeText(text);
 
 alert("Alamat berhasil disalin");
 
+    function addToCalendar(){
+
+const startDate = "2026-07-10T09:00:00";
+const endDate = "2026-07-10T12:00:00";
+
+const title = "Wedding Misya";
+const location = "Lokasi Acara";
+const details = "Our Wedding Day";
+
+// deteksi device
+const ua = navigator.userAgent;
+const isIOS = /iPad|iPhone|iPod/.test(ua);
+const isAndroid = /Android/.test(ua);
+
+if(isAndroid){
+
+// Android Calendar Intent
+const start = new Date(startDate).getTime();
+const end = new Date(endDate).getTime();
+
+window.location.href =
+`intent://calendar/event?title=${encodeURIComponent(title)}&beginTime=${start}&endTime=${end}&location=${encodeURIComponent(location)}&description=${encodeURIComponent(details)}#Intent;scheme=content;action=android.intent.action.INSERT;end`;
+
+}else if(isIOS){
+
+// Apple Calendar
+window.location.href = "wedding.ics";
+
+}else{
+
+// fallback ke Google Calendar
+const google =
+`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=20260710T090000/20260710T120000&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+
+window.open(google,"_blank");
+
+}
+    }
 }
 </script>
 
