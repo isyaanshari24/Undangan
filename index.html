@@ -1202,25 +1202,7 @@ document.getElementById("guestName").textContent = guest.replace(/%20/g," ");
 }
 </script>
 <script>
-function openInvitation(){
 
-document.body.classList.remove("lock-scroll");
-
-document.getElementById("cover").style.display="none";
-
-document.getElementById("music").play();
-
-/* tampilkan header */
-
-document.getElementById("mainHeader").classList.add("show");
-
-const faders = document.querySelectorAll(".fade");
-
-faders.forEach(el=>{
-el.classList.add("show");
-});
-
-}
 
 function toggleMenu(){
 
@@ -1233,7 +1215,23 @@ function copyRek(id){
 
 let text=document.getElementById(id).innerText;
 
-navigator.clipboard.writeText(text);
+navigator.clipboard.writeText(text)function openInvitation(){
+
+document.body.classList.remove("lock-scroll");
+
+document.getElementById("cover").style.display="none";
+
+document.getElementById("music").play();
+
+document.getElementById("mainHeader").classList.add("show");
+
+const faders = document.querySelectorAll(".fade");
+
+faders.forEach(el=>{
+el.classList.add("show");
+});
+
+    };
 
 alert("Nomor rekening berhasil disalin");
 
