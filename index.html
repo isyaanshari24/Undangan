@@ -1193,187 +1193,188 @@ atas kehadiran dan doa restu Anda.
 <source src="musik.mp3" type="audio/mpeg">
 </audio>
     
-<script>
-const urlParams = new URLSearchParams(window.location.search);
-const guest = urlParams.get('to');
-
-if(guest){
-document.getElementById("guestName").textContent = guest.replace(/%20/g," ");
-}
-</script>
-<script>
-
-
-function toggleMenu(){
-
-document.getElementById("menuPanel").classList.toggle("show");
-
-}
-
-
-function copyRek(id){
-
-let text=document.getElementById(id).innerText;
-
-navigator.clipboard.writeText(text)function openInvitation(){
-
-document.body.classList.remove("lock-scroll");
-
-document.getElementById("cover").style.display="none";
-
-document.getElementById("music").play();
-
-document.getElementById("mainHeader").classList.add("show");
-
-const faders = document.querySelectorAll(".fade");
-
-faders.forEach(el=>{
-el.classList.add("show");
-});
-
-    };
-
-alert("Nomor rekening berhasil disalin");
-
-}
-
-const targetDate = new Date(2026,2,29,8,0,0).getTime();
-
-setInterval(function(){
-
-const now = new Date().getTime();
-const distance = targetDate - now;
-
-const days = Math.floor(distance/(1000*60*60*24));
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("days").textContent = days;
-document.getElementById("hours").textContent = hours;
-document.getElementById("minutes").textContent = minutes;
-document.getElementById("seconds").textContent = seconds;
-
-},1000);
-
-const API_URL = "https://script.google.com/macros/s/AKfycbx-MISCajkdMazSXKC9RkuFup1pZ8VXAiEOLKKWjBfCRBM52j1wdNXdWJvGsPYc4x2NMw/exec";
-
-async function loadUcapan(){
-
-let res = await fetch(API_URL);
-let data = await res.json();
-
-let box = document.getElementById("daftarUcapan");
-box.innerHTML="";
-
-data.reverse().forEach(d=>{
-
-box.innerHTML += `
-<div class="ucapan-item">
-<b>${d.nama} (${d.hadir})</b>
-<span>${d.ucapan}</span>
-</div>
-`;
-
-});
-
-}
-
-loadUcapan();
-
-
-document.getElementById("rsvp-form")
-.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-let nama=document.getElementById("nama").value;
-let hadir=document.getElementById("hadir").value;
-let ucapan=document.getElementById("ucapan").value;
-
-await fetch(API_URL,{
-method:"POST",
-body:JSON.stringify({nama,hadir,ucapan})
-});
-
-loadUcapan();
-
-let pesan =
-"RSVP Undangan Pernikahan%0A%0A"+
-"Nama: "+nama+"%0A"+
-"Kehadiran: "+hadir+"%0A"+
-"Ucapan: "+ucapan;
-
-let nomor = "6285787379101";
-
-window.open("https://wa.me/"+nomor+"?text="+pesan,"_blank");
-
-this.reset();
-
-});
-function showGift(type){
-
-document.getElementById("cashless").style.display="none";
-document.getElementById("sendgift").style.display="none";
-
-document.getElementById(type).style.display="block";
-
-}
-
-function copyAlamat(){
-
-let text=document.getElementById("alamat").innerText;
-
-navigator.clipboard.writeText(text);
-
-alert("Alamat berhasil disalin");
-
-}
-function showGift(type){
-
-document.getElementById("cashless").style.display="none";
-document.getElementById("sendgift").style.display="none";
-
-document.getElementById(type).style.display="flex";
-
-}
-
-function copyAlamat(){
-
-let text=document.getElementById("alamat").innerText;
-
-navigator.clipboard.writeText(text);
-
-alert("Alamat berhasil disalin");
-
-    }
-function addToCalendar(){
-
-const start = "20260710T090000";
-const end = "20260710T120000";
-
-const title = "Wedding Misya";
-const location = "Lokasi Acara";
-const details = "Our Wedding Day";
-
-const ua = navigator.userAgent;
-const isIOS = /iPad|iPhone|iPod/.test(ua);
-
-if(isIOS){
-
-window.location.href = "wedding.ics";
-
-}else{
-
-const googleCalendar =
-`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-
-window.open(googleCalendar,"_blank");
-
-}
-}
-    }
-</script>
+<script>  
+const urlParams = new URLSearchParams(window.location.search);  
+const guest = urlParams.get('to');  
+  
+if(guest){  
+document.getElementById("guestName").textContent = guest.replace(/%20/g," ");  
+}  
+</script>  <script>  
+function openInvitation(){  
+  
+document.body.classList.remove("lock-scroll");  
+  
+document.getElementById("cover").style.display="none";  
+  
+document.getElementById("music").play();  
+  
+/* tampilkan header */  
+  
+document.getElementById("mainHeader").classList.add("show");  
+  
+const faders = document.querySelectorAll(".fade");  
+  
+faders.forEach(el=>{  
+el.classList.add("show");  
+});  
+  
+}  
+  
+function toggleMenu(){  
+  
+document.getElementById("menuPanel").classList.toggle("show");  
+  
+}  
+  
+  
+function copyRek(id){  
+  
+let text=document.getElementById(id).innerText;  
+  
+navigator.clipboard.writeText(text);  
+  
+alert("Nomor rekening berhasil disalin");  
+  
+}  
+  
+const targetDate = new Date(2026,2,29,8,0,0).getTime();  
+  
+setInterval(function(){  
+  
+const now = new Date().getTime();  
+const distance = targetDate - now;  
+  
+const days = Math.floor(distance/(1000*60*60*24));  
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));  
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));  
+const seconds = Math.floor((distance%(1000*60))/1000);  
+  
+document.getElementById("days").textContent = days;  
+document.getElementById("hours").textContent = hours;  
+document.getElementById("minutes").textContent = minutes;  
+document.getElementById("seconds").textContent = seconds;  
+  
+},1000);  
+  
+const API_URL = "https://script.google.com/macros/s/AKfycbx-MISCajkdMazSXKC9RkuFup1pZ8VXAiEOLKKWjBfCRBM52j1wdNXdWJvGsPYc4x2NMw/exec";  
+  
+async function loadUcapan(){  
+  
+let res = await fetch(API_URL);  
+let data = await res.json();  
+  
+let box = document.getElementById("daftarUcapan");  
+box.innerHTML="";  
+  
+data.reverse().forEach(d=>{  
+  
+box.innerHTML += `  
+<div class="ucapan-item">  
+<b>${d.nama} (${d.hadir})</b>  
+<span>${d.ucapan}</span>  
+</div>  
+`;  
+  
+});  
+  
+}  
+  
+loadUcapan();  
+  
+  
+document.getElementById("rsvp-form")  
+.addEventListener("submit",async function(e){  
+  
+e.preventDefault();  
+  
+let nama=document.getElementById("nama").value;  
+let hadir=document.getElementById("hadir").value;  
+let ucapan=document.getElementById("ucapan").value;  
+  
+await fetch(API_URL,{  
+method:"POST",  
+body:JSON.stringify({nama,hadir,ucapan})  
+});  
+  
+loadUcapan();  
+  
+let pesan =  
+"RSVP Undangan Pernikahan%0A%0A"+  
+"Nama: "+nama+"%0A"+  
+"Kehadiran: "+hadir+"%0A"+  
+"Ucapan: "+ucapan;  
+  
+let nomor = "6285787379101";  
+  
+window.open("https://wa.me/"+nomor+"?text="+pesan,"_blank");  
+  
+this.reset();  
+  
+});  
+function showGift(type){  
+  
+document.getElementById("cashless").style.display="none";  
+document.getElementById("sendgift").style.display="none";  
+  
+document.getElementById(type).style.display="block";  
+  
+}  
+  
+function copyAlamat(){  
+  
+let text=document.getElementById("alamat").innerText;  
+  
+navigator.clipboard.writeText(text);  
+  
+alert("Alamat berhasil disalin");  
+  
+}  
+function showGift(type){  
+  
+document.getElementById("cashless").style.display="none";  
+document.getElementById("sendgift").style.display="none";  
+  
+document.getElementById(type).style.display="flex";  
+  
+}  
+  
+function copyAlamat(){  
+  
+let text=document.getElementById("alamat").innerText;  
+  
+navigator.clipboard.writeText(text);  
+  
+alert("Alamat berhasil disalin");  
+  
+  
+function addToCalendar(){  
+  
+const start = "20260710T090000";  
+const end = "20260710T120000";  
+  
+const title = "Wedding Misya";  
+const location = "Lokasi Acara";  
+const details = "Our Wedding Day";  
+  
+const ua = navigator.userAgent;  
+const isIOS = /iPad|iPhone|iPod/.test(ua);  
+  
+if(isIOS){  
+  
+window.location.href = "wedding.ics";  
+  
+}else{  
+  
+const googleCalendar =  
+`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;  
+  
+window.open(googleCalendar,"_blank");  
+  
+}  
+}  
+}  
+</script> 
 
 </body>
 </html>
