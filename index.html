@@ -640,24 +640,27 @@ visibility:visible;
 .frame{
 position:relative;
 max-width:700px;
-
-/* jarak dari layar */
-margin:40px 20px;
-
+margin:auto;
 padding:60px 30px;
 
-border:3px solid #C6A75E;
+border:3px solid #C6A75E; /* warna gold dari tema kamu */
 border-radius:250px;
 
-background:rgba(245,238,220,0.45);
+background:rgba(245, 238, 220, 0.45); /* cream + opacity */
+
 backdrop-filter:blur(2px);
 }
+
 /* agar konten tetap di atas */
 .frame > *{
 position:relative;
 z-index:2;
-};
-visibility:visible;
+}
+.frame{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 /* tombol hamburger */
 
