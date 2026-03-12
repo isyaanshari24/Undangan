@@ -637,25 +637,21 @@ z-index:999;
 opacity:1;
 visibility:visible;
 }
-    .frame{
+.frame{
 position:relative;
 max-width:700px;
-margin:auto;
+
+/* jarak dari layar */
+margin:40px 20px;
+
 padding:60px 30px;
 
-min-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-
 border:3px solid #C6A75E;
-border-radius:40px; /* 250px terlalu bulat */
+border-radius:250px;
 
-background:rgba(245, 238, 220, 0.45);
-
+background:rgba(245,238,220,0.45);
 backdrop-filter:blur(2px);
 }
-
 /* agar konten tetap di atas */
 .frame > *{
 position:relative;
