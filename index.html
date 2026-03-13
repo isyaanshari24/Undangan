@@ -643,24 +643,35 @@ max-width:700px;
 margin:auto;
 padding:60px 30px;
 
-border:3px solid #C6A75E; /* warna gold dari tema kamu */
-border-radius:250px;
+border:3px solid #C6A75E; 
+border-radius:40px; /* ubah dari 250px supaya tidak oval */
 
-background:rgba(245, 238, 220, 0.45); /* cream + opacity */
-
+background:rgba(245, 238, 220, 0.45);
 backdrop-filter:blur(2px);
+
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* garis dalam */
+.frame::before{
+content:"";
+position:absolute;
+top:12px;
+left:12px;
+right:12px;
+bottom:12px;
+
+border:2px solid #C6A75E;
+border-radius:30px;
 }
 
 /* agar konten tetap di atas */
 .frame > *{
 position:relative;
 z-index:2;
-}
-.frame{
-min-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
 }
 /* tombol hamburger */
 
