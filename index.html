@@ -643,8 +643,10 @@ max-width:700px;
 margin:auto;
 padding:60px 30px;
 
-border:3px solid #C6A75E; 
-border-radius:40px; /* ubah dari 250px supaya tidak oval */
+border-radius:40px;
+
+/* border ke dalam */
+box-shadow: inset 0 0 0 3px #C6A75E;
 
 background:rgba(245, 238, 220, 0.45);
 backdrop-filter:blur(2px);
@@ -653,19 +655,6 @@ min-height:80vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-}
-
-/* garis dalam */
-.frame::before{
-content:"";
-position:absolute;
-top:12px;
-left:12px;
-right:12px;
-bottom:12px;
-
-border:2px solid #C6A75E;
-border-radius:30px;
 }
 
 /* agar konten tetap di atas */
