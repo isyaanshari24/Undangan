@@ -848,8 +848,19 @@ inset 0 0 4px rgba(255,255,255,0.6);
 animation:ringSpin 2s linear infinite;
 }
 
-/* animasi putar */
-@keyframes ringSpin{
+/* animasi naik turun */
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+}
+
+/* animasi putar cincin */
+@keyframes spin{
 0%{
 transform:rotate(0deg);
 }
