@@ -1505,19 +1505,19 @@ el.classList.add("show");
 });
 
     }
-window.addEventListener("load", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
 const loader = document.getElementById("loader");
 
 setTimeout(function(){
 
-loader.style.opacity = "0";
+loader.style.opacity="0";
 
 setTimeout(function(){
-loader.style.display = "none";
+loader.remove();
 },600);
 
-},1000);
+},1200);
 
 });
 </script> 
